@@ -1,1 +1,1 @@
-python .\converter.py -i .\IoBoard.cs -o output.json
+python .\converter.py -i .\enum.cs -o output.json
