@@ -39,15 +39,15 @@ def write_json(data, output_file):
 def main():
     # Argument parser setup
     parser = argparse.ArgumentParser(description='Convert C# enums to JSON.')
-    parser.add_argument('input_file', type=str, help='Path to the input C# file.')
-    parser.add_argument('output_file', type=str, help='Path to the output JSON file.')
+    parser.add_argument('-i', '--input', type=str, required=True, help='Path to the input C# file.')
+    parser.add_argument('-o', '--output', type=str, required=True, help='Path to the output JSON file.')
 
     args = parser.parse_args()
 
     # Process the files
-    enum_data = parse_enum_file(args.input_file)
-    write_json(enum_data, args.output_file)
-    print(f"JSON file '{args.output_file}' successfully created.")
+    enum_data = parse_enum_file(args.input)
+    write_json(enum_data, args.output)
+    print(f"JSON file '{args.output}' successfully created.")
 
 if __name__ == "__main__":
     main()
